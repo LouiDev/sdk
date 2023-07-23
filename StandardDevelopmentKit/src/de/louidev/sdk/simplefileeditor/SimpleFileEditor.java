@@ -38,7 +38,7 @@ public class SimpleFileEditor {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static Object readObject(String filePath) {
 		Object o = null;
 

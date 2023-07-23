@@ -10,9 +10,10 @@ public class SimpleTimer {
 
 	private SimpleTimer(Timer timer) {
 		this.timer = timer;
-		this.onCancel = () -> {};
+		this.onCancel = () -> {
+		};
 	}
-	
+
 	private SimpleTimer(Timer timer, SimpleTimerAction onCancel) {
 		this.timer = timer;
 		this.onCancel = onCancel;
@@ -23,9 +24,9 @@ public class SimpleTimer {
 		timer.purge();
 		onCancel.performAction();
 	}
-	
+
 	// DELAY
-	
+
 	public static SimpleTimer delay(long delay, SimpleTimerAction action) {
 		Timer timer = new Timer();
 		timer.schedule(new TimerTask() {
@@ -38,7 +39,7 @@ public class SimpleTimer {
 		}, delay);
 		return new SimpleTimer(timer);
 	}
-	
+
 	public static SimpleTimer delay(long delay, SimpleTimerAction action, SimpleTimerAction onCancel) {
 		Timer timer = new Timer();
 		timer.schedule(new TimerTask() {
@@ -51,45 +52,45 @@ public class SimpleTimer {
 		}, delay);
 		return new SimpleTimer(timer, onCancel);
 	}
-	
+
 	// REPEAT
-	
+
 	public static SimpleTimer repeat(long period, long delay, SimpleTimerAction action) {
 		Timer timer = new Timer();
 		timer.schedule(new TimerTask() {
-			
+
 			@Override
 			public void run() {
 				action.performAction();
 			}
-			
+
 		}, delay, period);
 		return new SimpleTimer(timer);
 	}
-	
+
 	public static SimpleTimer repeat(long period, long delay, SimpleTimerAction action, SimpleTimerAction onCancel) {
 		Timer timer = new Timer();
 		timer.schedule(new TimerTask() {
-			
+
 			@Override
 			public void run() {
 				action.performAction();
 			}
-			
+
 		}, delay, period);
 		return new SimpleTimer(timer, onCancel);
 	}
-	
+
 	// REPEAT FOR
-	
+
 	public static SimpleTimer repeatFor(long period, long delay, int amount, SimpleTimerAction action) {
 		Timer timer = new Timer();
 		timer.schedule(new TimerTask() {
 			int x = 0;
-			
+
 			@Override
 			public void run() {
-				if(x == amount) {
+				if (x == amount) {
 					timer.cancel();
 					timer.purge();
 				} else {
@@ -97,19 +98,20 @@ public class SimpleTimer {
 				}
 				x++;
 			}
-			
+
 		}, delay, period);
 		return new SimpleTimer(timer);
 	}
-	
-	public static SimpleTimer repeatFor(long period, long delay, int amount, SimpleTimerAction action, SimpleTimerAction onCancel) {
+
+	public static SimpleTimer repeatFor(long period, long delay, int amount, SimpleTimerAction action,
+			SimpleTimerAction onCancel) {
 		Timer timer = new Timer();
 		timer.schedule(new TimerTask() {
 			int x = 0;
-			
+
 			@Override
 			public void run() {
-				if(x == amount) {
+				if (x == amount) {
 					timer.cancel();
 					timer.purge();
 				} else {
@@ -117,7 +119,7 @@ public class SimpleTimer {
 				}
 				x++;
 			}
-			
+
 		}, delay, period);
 		return new SimpleTimer(timer, onCancel);
 	}
