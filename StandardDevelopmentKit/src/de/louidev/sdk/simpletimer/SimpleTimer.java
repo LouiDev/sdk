@@ -5,7 +5,6 @@ import java.util.TimerTask;
 
 public class SimpleTimer {
 
-	
 	private Timer timer;
 	private SimpleTimerAction onCancel;
 

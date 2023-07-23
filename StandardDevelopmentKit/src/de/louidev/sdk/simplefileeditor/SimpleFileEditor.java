@@ -13,7 +13,6 @@ import java.io.Serializable;
 
 public class SimpleFileEditor {
 
-	
 	public static void write(String filePath, String content) {
 		try {
 
