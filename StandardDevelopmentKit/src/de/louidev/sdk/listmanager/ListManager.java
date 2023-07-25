@@ -123,7 +123,7 @@ public class ListManager {
 	/*
 	 * Warning: time complexity of n squared 
 	 */
-	public static int[] selectionsortInt(int[] array) {
+	public static int[] selectionsort(int[] array) {
 		if(array.length == 0) return array;
 		int startingIndex = 0;
 		int currentLowestIndex = startingIndex;
@@ -141,7 +141,7 @@ public class ListManager {
 	/*
 	 * Warning: time complexity of n squared 
 	 */
-	public static long[] selectionsortInt(long[] array) {
+	public static long[] selectionsort(long[] array) {
 		if(array.length == 0) return array;
 		int startingIndex = 0;
 		int currentLowestIndex = startingIndex;
@@ -159,7 +159,7 @@ public class ListManager {
 	/*
 	 * Warning: time complexity of n squared 
 	 */
-	public static float[] selectionsortInt(float[] array) {
+	public static float[] selectionsort(float[] array) {
 		if(array.length == 0) return array;
 		int startingIndex = 0;
 		int currentLowestIndex = startingIndex;
@@ -177,7 +177,7 @@ public class ListManager {
 	/*
 	 * Warning: time complexity of n squared 
 	 */
-	public static double[] selectionsortInt(double[] array) {
+	public static double[] selectionsort(double[] array) {
 		if(array.length == 0) return array;
 		int startingIndex = 0;
 		int currentLowestIndex = startingIndex;
