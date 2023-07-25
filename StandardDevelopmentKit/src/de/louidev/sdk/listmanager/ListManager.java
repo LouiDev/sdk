@@ -192,4 +192,38 @@ public class ListManager {
 		return array;
 	}
 	
+	// Reversing
+	
+	public static int[] reverse(int[] array) {
+		int[] newArray = new int[array.length];
+		for(int i = 0; i < array.length; i++) {
+			newArray[i] = array[array.length - i - 1];
+		}
+		return newArray;
+	}
+	
+	public static long[] reverse(long[] array) {
+		long[] newArray = new long[array.length];
+		for(int i = 0; i < array.length; i++) {
+			newArray[i] = array[array.length - i - 1];
+		}
+		return newArray;
+	}
+	
+	public static float[] reverse(float[] array) {
+		float[] newArray = new float[array.length];
+		for(int i = 0; i < array.length; i++) {
+			newArray[i] = array[array.length - i - 1];
+		}
+		return newArray;
+	}
+	
+	public static double[] reverse(double[] array) {
+		double[] newArray = new double[array.length];
+		for(int i = 0; i < array.length; i++) {
+			newArray[i] = array[array.length - i - 1];
+		}
+		return newArray;
+	}
+	
 }
