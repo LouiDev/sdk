@@ -7,7 +7,7 @@
 This library provides:
 - sorting lists
 - reversing lists
-- writing / reading from files (including serilization)
+- writing / reading from files (including serialization)
 - delaying / repeating code
 
 # Installation (Maven)
